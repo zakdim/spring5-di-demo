@@ -1,7 +1,6 @@
 package guru.springframework.controllers;
 
 import guru.springframework.services.GreetingService;
-import guru.springframework.services.GreetingServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -11,11 +10,13 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class PropertyInjectedController {
 
-    // Spring injection point
+    // Spring injection point. Note using interface type but property name
+    // matches implementation class with first lower case letter. The matching
+    // implementation class will be found by reflection in this case.
     @Autowired
-    public GreetingServiceImpl greetingService;
+    public GreetingService greetingServiceImpl;
 
     public String sayHello() {
-        return greetingService.sayGreeting();
+        return greetingServiceImpl.sayGreeting();
     }
 }
