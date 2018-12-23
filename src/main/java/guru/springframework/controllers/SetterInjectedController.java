@@ -1,13 +1,10 @@
 package guru.springframework.controllers;
 
 import guru.springframework.services.GreetingService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 
 /**
  * Created by dmitri on 2018-12-16
  */
-@Controller
 public class SetterInjectedController {
 
     // Using interface
@@ -17,8 +14,7 @@ public class SetterInjectedController {
         return greetingService.sayGreeting();
     }
 
-    // Setter spring injection point
-    @Autowired
+    // Setter for manual injection point
     public void setGreetingService(GreetingService greetingService) {
 
         this.greetingService = greetingService;
