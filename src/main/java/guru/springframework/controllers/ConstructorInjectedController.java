@@ -9,7 +9,7 @@ public class ConstructorInjectedController {
 
     private GreetingService greetingService;
 
-    // Spring constructor injection point: this is automatic, no need to use @Autowired
+    // Constructor injection points
     public ConstructorInjectedController(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
