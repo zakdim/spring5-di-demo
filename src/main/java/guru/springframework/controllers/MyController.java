@@ -14,6 +14,7 @@ public class MyController {
     // No specific implementation is specified using @Qualifier
     // @Primary is used
     public MyController(GreetingService greetingService) {
+
         this.greetingService = greetingService;
     }
 
