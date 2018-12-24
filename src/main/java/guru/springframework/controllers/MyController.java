@@ -4,22 +4,19 @@ import guru.springframework.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 /**
- * Created by dmitri on 2018-12-15
+ * Created by jt on 5/23/17.
  */
 @Controller
 public class MyController {
 
     private GreetingService greetingService;
 
-    // No specific implementation is specified using @Qualifier
-    // @Primary is used
     public MyController(GreetingService greetingService) {
-
         this.greetingService = greetingService;
     }
 
-    public String hello() {
-        System.out.println("Hello!!!");
+    public String hello(){
+        System.out.println("Hello!!! ");
 
         return greetingService.sayGreeting();
     }

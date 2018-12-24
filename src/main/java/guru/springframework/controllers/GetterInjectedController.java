@@ -6,25 +6,18 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 /**
- * Created by dmitri on 2018-12-16
+ * Created by jt on 5/24/17.
  */
 @Controller
-public class SetterInjectedController {
-
-    // Using interface
+public class GetterInjectedController {
     private GreetingService greetingService;
 
-    public String sayHello() {
+    public String sayHello(){
         return greetingService.sayGreeting();
     }
 
-    // Setter spring injection point
     @Autowired
-//    @Qualifier("setterGreetingService")
-    // Or use @Qualifier annotation with method parameter
-//    public void setGreetingService(GreetingService greetingService) {
-    public void setGreetingService(@Qualifier("setterGreetingService") GreetingService greetingService) {
-
+    public void setGreetingService(@Qualifier("getterGreetingService") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 }

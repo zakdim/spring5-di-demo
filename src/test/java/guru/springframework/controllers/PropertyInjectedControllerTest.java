@@ -7,7 +7,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by dmitri on 2018-12-16
+ * Created by jt on 5/24/17.
  */
 public class PropertyInjectedControllerTest {
 
@@ -16,7 +16,6 @@ public class PropertyInjectedControllerTest {
     @Before
     public void setUp() throws Exception {
         this.propertyInjectedController = new PropertyInjectedController();
-        // setter injection
         this.propertyInjectedController.greetingServiceImpl = new GreetingServiceImpl();
     }
 
